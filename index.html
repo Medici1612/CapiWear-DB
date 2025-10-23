@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapiWear - Galeria de Imagens</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #5a3e2b;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #5a3e2b;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧢 CapiWear - Galeria de Imagens</h1>
+  <p>Estas são as imagens hospedadas na pasta <code>ImagesDB</code> usadas no banco de dados.</p>
+
+  <div class="gallery" id="gallery"></div>
+
+  <footer>
+    <p>Feito com 💚 por <a href="https://github.com/Medici1612">Medici1612</a> — CapiWear</p>
+  </footer>
+
+  <script>
+    // Liste aqui os nomes exatos dos arquivos dentro de ImagesDB/
+const imagens = [
+  "img1.png",
+  "img10.jpg",
+  "img11.jpg",
+  "img12.jpg",
+  "img13.jpg",
+  "img2.png",
+  "img3.png",
+  "img4.png",
+  "img5.png",
+  "img6.png",
+  "img7.png",
+  "img8.png",
+  "img9.jpg"
+];
+
+
+
+    const baseURL = "https://medici1612.github.io/CapiWear---DB/ImagesDB/";
+    const gallery = document.getElementById("gallery");
+
+    imagens.forEach(nome => {
+      const img = document.createElement("img");
+      img.src = baseURL + encodeURIComponent(nome);
+      img.alt = nome;
+      gallery.appendChild(img);
+    });
+  </script>
+
+</body>
+</html>
